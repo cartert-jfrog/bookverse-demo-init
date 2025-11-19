@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       jpd_host:
-        description: 'JFrog Platform Host (e.g., https://apptrusttraining1.jfrog.io)'
+        description: 'JFrog Platform Host (e.g., https://cartert.jfrog.io)'
         required: true
         type: string
       admin_token:
@@ -14,12 +14,12 @@ on:
       confirm_switch:
         description: 'Type "SWITCH" to confirm platform migration'
         required: true
-        type: string
+        type: "SWITCH"
       update_k8s:
         description: 'Update Kubernetes cluster registry (requires kubectl access)'
         required: false
         type: boolean
-        default: false
+        default: true
 
 env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
